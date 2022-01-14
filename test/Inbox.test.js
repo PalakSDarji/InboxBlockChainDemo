@@ -26,10 +26,15 @@ describe('Inbox', function() {
   });
 });
 
-//Testing git multi accounts.
-
-/*describe('', function(){
-  it('',async function() {
-
+describe('has a default message', function(){
+  it('using constructor',async function() {
+    const message = await inbox.methods.message().call();
+    assert.equal(message,'Hi there!');
   });
-});*/
+
+  it('using setMessage', async function(){
+    await inbox.methods.setMessage('Palak').send({from: accounts[0]});
+    const message = await inbox.methods.message().call();
+    assert.equal(message,'Palak');
+  });
+});
