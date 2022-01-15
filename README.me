@@ -1,0 +1,17 @@
+Run this commands when clonning this repo to install node.js dependencies:
+
+1. npm init
+2. npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider
+
+Update test script in package.json to be "test":"mocha"
+
+Create .env file in root directory, add your metamask mnemonic like this:
+METAMASK=your_mnemonic_directly_without_any_comma
+
+To compile the contract: node compile.js
+To run testcases: npm run test
+To deploy the contract to Rinkby testnet: node deploy.js
+
+In order to interact with deployed contract, copy the deployment address and paste it in
+remix with "injected web3" as blockChain VM using MetaMask extension and click "AtAddress" to load the 
+contract from blockChain.
